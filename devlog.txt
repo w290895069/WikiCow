@@ -1,7 +1,53 @@
-claraM -- 2018-10-15 13:17
-Created dev log
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USAGE: (**WILL BE DELETING THIS SECTION SOON**)
+* Replace all fields, angle brackets included, with specified info.
+  eg, pd <pd#> --> pd 3
+* Delete these instructions once all teammates understand usage.
+  (from tilde bar above to tilde bar below)
+* rename this file devlog.txt
 
+devlog--
+Use keyboard shortcut to jump to end,
+ replicate entry template, (Ctrl-Shift up x5, Ctrl-X, Ctrl-V x2)
+ modify appropriately.
+Each entry should begin with the following format:
+ firstL -- TIMESTAMP\n
+e.g.: 
+clydeS -- 2999-12-31 23:59
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+WikiCow
+Clara Mohri
+Jiajie Mai
+William Lu
+Alex Liu
+pd 07
+---------------------
+Collaborative Story Telling Website
+
+
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+fristL -- TIMESTAMP
+--------------------------------------------------------------
+<Thing fristL did.>
+==============================================================
+
+claraM -- 2018-10-15 13:17
+--------------------------------------------------------------
+Created dev log
+==============================================================
 williamL -- 2018-10-16 19:40
+--------------------------------------------------------------
 response to "Programming Sucks":
 1/0 is clearly not infinity and the value of infinity cannot be defined in a computer because of limited memory.
 Mountain Dew is bad for you body. Don't drink it.
@@ -12,16 +58,18 @@ Do not procrastinate. Start as early as you can because you never know how long 
 Communication is essential. Don't be afraid to ask questions.
 
 alexanderL -- 2018-10-16 23:59
+--------------------------------------------------------------
 response to "Programming Sucks":
 It is important to find those "empty closet spaces" (aka tools for coding). 
 Get to know your teammates so they don't seem like a crazy person who has unreasonable preferences.
 The “good enough for now” code with comments like “TODO: FIX THIS IT’S A REALLY DANGEROUS HACK BUT I DON’T KNOW WHAT’S WRONG” is not okay. Know your code and know how to fix it so a little change doesn't break everything.
-
+==============================================================
 claraM -- 2018-10-17 6:50
+--------------------------------------------------------------
 response to "Programming Sucks":
 It's unfortunate that the author of this article feels so overwhelmed by certain aspects of collaborative code writing that could be fixed, like standards for documentation. 
 Actions we will take to make more awesome: 
 1. We will be writing descriptive comments for all of our code. We will have a heading at the top of each file describing what the code as a whole will do.
 2. We will all get to know our code, and we will let our teammates know if there is something that does not work. If something doesn't work, we will try to fix by talking about it together so we all familiarize ourselves with the problem. 
 3. We will do our best to write code that makes sense.
-
+==============================================================

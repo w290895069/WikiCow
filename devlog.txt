@@ -77,6 +77,13 @@ Actions we will take to make more awesome:
 2. We will all get to know our code, and we will let our teammates know if there is something that does not work. If something doesn't work, we will try to fix by talking about it together so we all familiarize ourselves with the problem.
 3. We will do our best to write code that makes sense.
 ==============================================================
+jiajieM -- 2018-10-17 12:57
+--------------------------------------------------------------
+response to "Programming Sucks":
+A little late, but here it is:
+Programming seems to be like a double sword edge. It's an industry that many people do want to go into, but nobody seems to know the truth or the complete truth. The article paints the picture in a humorous light as well as expressing programmer's unhealthy relationship with their work and the almost torturous way of working. The sheer amount of fury and hate towards programming has been pent up in our author is exploded over his article about a programmer's life.
+Tl;dr- programming is bad for your health, but it's okay since it's your work.
+==============================================================
 alexanderL -- 2018-10-17 13:14
 --------------------------------------------------------------
 created app.py and the templates ( login.html, landing.html )

@@ -12,7 +12,7 @@ Use keyboard shortcut to jump to end,
  modify appropriately.
 Each entry should begin with the following format:
  firstL -- TIMESTAMP\n
-e.g.: 
+e.g.:
 clydeS -- 2999-12-31 23:59
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -26,13 +26,13 @@ pd 07
 Collaborative Story Telling Website
 
 
- ______   ______   __   __   __       ______   _______     
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
-    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -64,16 +64,27 @@ updated design.pdf (elaborated on component map)
 alexanderL -- 2018-10-16 23:59
 --------------------------------------------------------------
 response to "Programming Sucks":
-It is important to find those "empty closet spaces" (aka tools for coding). 
+It is important to find those "empty closet spaces" (aka tools for coding).
 Get to know your teammates so they don't seem like a crazy person who has unreasonable preferences.
 The “good enough for now” code with comments like “TODO: FIX THIS IT’S A REALLY DANGEROUS HACK BUT I DON’T KNOW WHAT’S WRONG” is not okay. Know your code and know how to fix it so a little change doesn't break everything.
 ==============================================================
 claraM -- 2018-10-17 6:50
 --------------------------------------------------------------
 response to "Programming Sucks":
-It's unfortunate that the author of this article feels so overwhelmed by certain aspects of collaborative code writing that could be fixed, like standards for documentation. 
-Actions we will take to make more awesome: 
+It's unfortunate that the author of this article feels so overwhelmed by certain aspects of collaborative code writing that could be fixed, like standards for documentation.
+Actions we will take to make more awesome:
 1. We will be writing descriptive comments for all of our code. We will have a heading at the top of each file describing what the code as a whole will do.
-2. We will all get to know our code, and we will let our teammates know if there is something that does not work. If something doesn't work, we will try to fix by talking about it together so we all familiarize ourselves with the problem. 
+2. We will all get to know our code, and we will let our teammates know if there is something that does not work. If something doesn't work, we will try to fix by talking about it together so we all familiarize ourselves with the problem.
 3. We will do our best to write code that makes sense.
+==============================================================
+jiajieM -- 2018-10-17 12:57
+--------------------------------------------------------------
+response to "Programming Sucks":
+A little late, but here it is:
+Programming seems to be like a double sword edge. It's an industry that many people do want to go into, but nobody seems to know the truth or the complete truth. The article paints the picture in a humorous light as well as expressing programmer's unhealthy relationship with their work and the almost torturous way of working. The sheer amount of fury and hate towards programming has been pent up in our author is exploded over his article about a programmer's life.
+Tl;dr- programming is bad for your health, but it's okay since it's your work.
+==============================================================
+alexanderL -- 2018-10-17 13:14
+--------------------------------------------------------------
+created app.py and the templates ( login.html, landing.html )
 ==============================================================

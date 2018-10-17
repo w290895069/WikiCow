@@ -51,7 +51,7 @@ app.secret_key = os.urandom(32)
 
 @app.route('/logout')
 def logout():
-    return ( render_template ( "foot.html", message = "You have been successfully logged out."))
+    return ( render_template ( "login.html", message = "You have been successfully logged out."))
 
     print(app)
     print(request) ##prints returned URL with auth tags

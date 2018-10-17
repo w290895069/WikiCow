@@ -17,5 +17,11 @@ It is important to find those "empty closet spaces" (aka tools for coding).
 Get to know your teammates so they don't seem like a crazy person who has unreasonable preferences.
 The “good enough for now” code with comments like “TODO: FIX THIS IT’S A REALLY DANGEROUS HACK BUT I DON’T KNOW WHAT’S WRONG” is not okay. Know your code and know how to fix it so a little change doesn't break everything.
 
-
+claraM -- 2018-10-17 6:50
+response to "Programming Sucks":
+It's unfortunate that the author of this article feels so overwhelmed by certain aspects of collaborative code writing that could be fixed, like standards for documentation. 
+Actions we will take to make more awesome: 
+1. We will be writing descriptive comments for all of our code. We will have a heading at the top of each file describing what the code as a whole will do.
+2. We will all get to know our code, and we will let our teammates know if there is something that does not work. If something doesn't work, we will try to fix by talking about it together so we all familiarize ourselves with the problem. 
+3. We will do our best to write code that makes sense.
 

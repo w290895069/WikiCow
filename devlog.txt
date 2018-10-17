@@ -57,6 +57,10 @@ concrete actions:
 Do not procrastinate. Start as early as you can because you never know how long it takes to debug until you find it.
 Communication is essential. Don't be afraid to ask questions.
 ==============================================================
+williamL -- 2018-10-16 22:10
+--------------------------------------------------------------
+updated design.pdf (elaborated on component map)
+==============================================================
 alexanderL -- 2018-10-16 23:59
 --------------------------------------------------------------
 response to "Programming Sucks":

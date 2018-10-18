@@ -6,11 +6,19 @@
 
 
 from flask import Flask, render_template, request, session, url_for, redirect
+import sqlite3
 import os
 app = Flask(__name__)
 
 username = 'alex'
 password = 'starwars4'
+
+# name of file will be database.db
+DB_FILE = "database.db"
+
+# create database.db
+db = sqlite3.connect(DB_FILE)
+c = db.cursor()
 
 @app.route('/')
 def disp_login():
@@ -21,10 +29,42 @@ def disp_login():
 def signup():
         loginMess = "Please enter a valid username and password to signup :)"
         return render_template("signup.html", message = loginMess)
-        #
-        # session['username'] = request.form['username']
-        # session['password'] = request.form['password']
-        # # print(session)
+
+@app.route('/signupauth')
+def sign_Auth():
+        session['username'] = request.form['username']
+        session['password'] = request.form['password']
+        # print(session)
+
+        # Invalid username: ===================================
+        if len (session['username']) < 3:
+            errorMess = "*cue sad trombone music* <br> It looks like you've entered an invalid username. Please try again."
+            # print('bad username')
+            return (render_template("signup.html", message = errorMess))
+
+        # Invalid password: ===================================
+        elif len (session['password']) < 5:
+            errorMess = "*cue sad trombone music* \n It looks like your password does not match your username. Please try again."
+            # print('bad password')
+            return (render_template("signup.html", message = errorMess))
+
+        # Both username and password are valid ================
+        elif (len (session['username']) > 3 and len (session['password']) > 5):
+            # enter username and password into the database
+            command = 'INSERT INTO users VALUES(' + session['username'] + ' , ' + session['password'] + ')'
+            c.execute(command)
+            db.commit()
+            db.close()
+            return render_template("login.html")
+
+        # All other invalid cases =============================
+        else:
+            errorMess = "Oops! Looks like something went wrong. Please try again."
+            return ((render_template("signup.html", message = errorMess )))
+
+        print (url_for('disp_login'))
+        print (url_for('authenticate'))
+        return redirect(url_for("disp_login"))
 
 # what is the difference between render_template, redirect, and url_for?
 @app.route('/auth', methods = ['POST'] )
@@ -43,7 +83,7 @@ def authenticate():
     # Invalid password: ===================================
     elif session['password'] != password:
         errorMess = "*cue sad trombone music* \n It looks like your password does not match your username. Please try again."
-        print('bad password')
+        # print('bad password')
         return (render_template("login.html", message = errorMess))
 
     # Both username and password are valid ================

@@ -90,10 +90,13 @@ created app.py and the templates ( login.html, landing.html )
 ==============================================================
 morhriC -- 2018-10-17 13:00
 --------------------------------------------------------------
-Created db_builder.py. This creates the database database.db. 
+Created db_builder.py. This creates the database database.db.
 ==============================================================
 mohriC -- 2018-10-18 12:58
 --------------------------------------------------------------
 Added hard coded values to the database.
 ==============================================================
-
+alexanderL -- 2018-10-18 13:08
+--------------------------------------------------------------
+fixed syntax error in app.py
+==============================================================

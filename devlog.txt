@@ -84,7 +84,7 @@ A little late, but here it is:
 Programming seems to be like a double sword edge. It's an industry that many people do want to go into, but nobody seems to know the truth or the complete truth. The article paints the picture in a humorous light as well as expressing programmer's unhealthy relationship with their work and the almost torturous way of working. The sheer amount of fury and hate towards programming has been pent up in our author is exploded over his article about a programmer's life.
 Tl;dr- programming is bad for your health, but it's okay since it's your work.
 ==============================================================
-morhriC -- 2018-10-17 13:00
+claraM -- 2018-10-17 13:00
 --------------------------------------------------------------
 Created db_builder.py. This creates the database database.db.
 ==============================================================
@@ -96,7 +96,7 @@ williamL -- 2018-10-17 16:50
 --------------------------------------------------------------
 created getTime()
 ==============================================================
-mohriC -- 2018-10-18 12:58
+claraM -- 2018-10-18 12:58
 --------------------------------------------------------------
 Added hard coded values to the database.
 ==============================================================

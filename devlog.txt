@@ -98,5 +98,5 @@ Added hard coded values to the database.
 ==============================================================
 alexanderL -- 2018-10-18 13:08
 --------------------------------------------------------------
-fixed syntax error in app.py
+fixed syntax error in app.py and added signup page
 ==============================================================

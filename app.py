@@ -17,6 +17,15 @@ def disp_login():
     loginMess = "Please enter a valid username and password."
     return render_template("login.html", message = loginMess)
 
+@app.route('/signup')
+def signup():
+        loginMess = "Please enter a valid username and password to signup :)"
+        return render_template("signup.html", message = loginMess)
+        #
+        # session['username'] = request.form['username']
+        # session['password'] = request.form['password']
+        # # print(session)
+
 # what is the difference between render_template, redirect, and url_for?
 @app.route('/auth', methods = ['POST'] )
 def authenticate():

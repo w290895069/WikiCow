@@ -25,3 +25,6 @@ def getTime():
 
 #print(getTime())
 print(getStory('title'))
+createStory('title', 'qwer', 'they killed themselves.')
+print(getStory('title'))
+print(getStory('title1'))

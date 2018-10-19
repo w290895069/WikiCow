@@ -1,9 +1,19 @@
 import sqlite3, time
 from datetime import datetime
 
+DB_FILE = "database.db"
+
+# creates the story table
+def createTable():
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    c.execute("CREATE TABLE stories (story TEXT, contributer TEXT, timestamp TEXT, contribution TEXT)")
+    db.commit()
+    db.close()
+
 # creates an entry in the story table
-def createStory(title, user, text):
-    db = sqlite3.connect('database.db')
+def updateStory(title, user, text):
+    db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     params = (title, user, getTime(), text)
     c.execute('INSERT INTO stories VALUES (?, ?, ?, ?)', params)
@@ -12,18 +22,18 @@ def createStory(title, user, text):
 
 # given the title, return a complete story by concatenating all entries
 def getStory(title):
-    db = sqlite3.connect('database.db')
+    db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     data = c.execute("SELECT * FROM stories WHERE story = '" + title + "';")
     text = ''
     for row in data:
-        text += row[3]
+        text += row[3] + ' '
     db.close()
     return text
 
 # given the title, returns a list of all writers
 def getWriters(title):
-    db = sqlite3.connect('database.db')
+    db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     data = c.execute("SELECT * FROM stories WHERE story = '" + title + "';")
     writers = []
@@ -39,9 +49,17 @@ def getTime():
     timeNow = timeNow[: timeNow.find('.')]
     return timeNow
 
+def getLastUpdate():
+
+
 #print(getTime())
+
+createTable()
+updateStory('title', 'clara', 'once upon a time')
+updateStory('title', 'jiajie', 'there was a family')
+updateStory('title', 'william', 'that lived in America.')
+updateStory('title1', 'alex', 'The sky was blue,')
 print(getStory('title'))
-createStory('title', 'qwer', 'they killed themselves.')
 print(getStory('title'))
 print(getStory('title1'))
 print(getWriters('title'))

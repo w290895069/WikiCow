@@ -49,17 +49,33 @@ def getTime():
     timeNow = timeNow[: timeNow.find('.')]
     return timeNow
 
+# prints a dictionary of format title: [contributer, timestamp, contribution] in the latest update
 def getLastUpdate():
-
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    data = c.execute("SELECT * FROM stories;")
+    titles = []
+    for row in data:
+        if row[0] not in titles:
+            titles.append(row[0])
+    data = c.execute("SELECT * FROM stories;")
+    dict = {}
+    for row in data:
+        for title in titles:
+            # print(row)
+            if title == row[0]:
+                dict[title] = row[1: ]
+    return dict
 
 #print(getTime())
-
 createTable()
 updateStory('title', 'clara', 'once upon a time')
 updateStory('title', 'jiajie', 'there was a family')
-updateStory('title', 'william', 'that lived in America.')
 updateStory('title1', 'alex', 'The sky was blue,')
+updateStory('title', 'william', 'that lived in America.')
+updateStory('title1', 'ur mom', 'which disgusts me')
 print(getStory('title'))
 print(getStory('title'))
 print(getStory('title1'))
 print(getWriters('title'))
+print(getLastUpdate())

@@ -130,3 +130,8 @@ moved db_builder.py functionalities to story.py
 wrote getLastUpdate() in story.py
 created makefile
 ==============================================================
+williamL -- 2018-10-20 10:05
+--------------------------------------------------------------
+changed signup.py to user.py
+wrote 3 fxns in user.py
+==============================================================

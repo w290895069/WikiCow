@@ -16,7 +16,7 @@ def updateStory(title, user, text):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     params = (title, user, getTime(), text)
-    c.execute('INSERT INTO stories VALUES (?, ?, ?, ?)', params)
+    c.execute("INSERT INTO stories VALUES (?, ?, ?, ?)", params)
     db.commit()
     db.close()
 
@@ -65,6 +65,7 @@ def getLastUpdate():
             # print(row)
             if title == row[0]:
                 dict[title] = row[1: ]
+    db.close()
     return dict
 
 #print(getTime())

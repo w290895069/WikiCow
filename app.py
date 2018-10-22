@@ -4,10 +4,9 @@
 # 2018-10-17
 
 from flask import Flask, render_template, request, session, url_for, redirect
-from story import getTime, getLastUpdate, getWriters, updateStory, getStory
-from user import register, resetPassword
-import sqlite3
-import os
+import user, story
+import sqlite3, os
+
 app = Flask(__name__)
 
 username = 'alex'
@@ -74,8 +73,12 @@ def sign_Auth():
             # c.execute(command)
             # db.commit()
             # db.close()
-            register(session['username'], session['password'], session['question'], session['answer'])
-            return render_template("login.html")
+            if user.register(session['username'], session['password'], session['question'], session['answer']):
+                msg = "You have successfully signed up"
+                return render_template("login.html", message = msg)
+            else:
+                msg = "Signup failed. Username already exists"
+                return render_template("signup.html", message = msg)
 
         # All other invalid cases =============================
         else:
@@ -95,8 +98,8 @@ def authenticate():
     print(session)
 
     # Both username and password are valid ================
-    if good(session['username'], session['password']):
-        return render_template("landing.html", d = getLastUpdate())
+    if user.authenticate(session['username'], session['password']):
+        return render_template("landing.html", d = story.getLastUpdate())
 
     # All other invalid cases =============================
     else:

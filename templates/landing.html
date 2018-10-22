@@ -15,7 +15,7 @@
 	<th>Time Edited</th>
 	<th>Preview</th>
       </tr>
-     
+
       {% for key in d %}
       <tr>
 	<td>{{key}}</td>
@@ -27,19 +27,12 @@
 
     </table>
 
-    {% for key in dictInput %}
-    {{key}}
-    {{dictInput[key][0]}}
-    {{dictInput[key][1]}}
-    {{dictInput[key][2]}}
-      {% endfor %}
-    
     <form action = "/logout">
       <input type = "submit" name = "logout" value = "Logout">
     </form>
 
-    
-    
+
+
 
 
   </body>

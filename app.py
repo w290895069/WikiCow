@@ -96,8 +96,7 @@ def authenticate():
 
     # Both username and password are valid ================
     if good(session['username'], session['password']):
-        dictInput = story.getStory()
-        return render_template("landing.html", d = dictInput)
+        return render_template("landing.html", d = getLastUpdate())
 
     # All other invalid cases =============================
     else:

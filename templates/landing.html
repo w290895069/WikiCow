@@ -16,16 +16,23 @@
 	<th>Preview</th>
       </tr>
      
-      {% for key in dictInput %}
+      {% for key in d %}
       <tr>
 	<td>{{key}}</td>
-	<td>{{dictInput[key][0]}}</td>
-	<td>{{dictInput[key][1]}}</td>
-	<td>{{dictInput[key][2]}}</td>
+	<td>{{d[key][0]}}</td>
+	<td>{{d[key][1]}}</td>
+	<td>{{d[key][2]}}</td>
       </tr>
       {% endfor %}
 
     </table>
+
+    {% for key in dictInput %}
+    {{key}}
+    {{dictInput[key][0]}}
+    {{dictInput[key][1]}}
+    {{dictInput[key][2]}}
+      {% endfor %}
     
     <form action = "/logout">
       <input type = "submit" name = "logout" value = "Logout">

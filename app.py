@@ -88,7 +88,7 @@ def authenticate():
 
     # Both username and password are valid ================
     elif (session['username'] == username and session['password'] == password):
-        #info = [{'story' : [], 'contributer' : [], 'timestamp' : [], 'contribution' : []}]
+        # info = [{'story' : [], 'contributer' : [], 'timestamp' : [], 'contribution' : []}]
         # need away to fill the list to be used in the rendering
         return render_template("landing.html")
 

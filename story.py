@@ -68,7 +68,8 @@ def getLastUpdate():
     db.close()
     return dict
 
-#print(getTime())
+
+# print(getTime())
 createTable()
 updateStory('title', 'clara', 'once upon a time')
 updateStory('title', 'jiajie', 'there was a family')

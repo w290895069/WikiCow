@@ -45,6 +45,7 @@ def resetPassword(usr, psw):
     db.commit()
     db.close()
 
+
 createTable()
 register('290895069', 'qwer', '???', '???')
 register('235160223', 'asdf', '???', '???')

@@ -148,3 +148,8 @@ alexanderL -- 2018-10-22 18:19
 got getTime, getLastUpdate, getWriters, updateStory, getStory
 to work with app.py
 ==============================================================
+alexanderL -- 2018-10-22 18:19
+--------------------------------------------------------------
+fixed app.py for registering, changed db_builder.py, and the signup
+template to have a security question and answer
+==============================================================

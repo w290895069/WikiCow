@@ -4,6 +4,7 @@
 # 2018-10-17
 
 from flask import Flask, render_template, request, session, url_for, redirect
+from story import getTime, getLastUpdate, getWriters, updateStory, getStory
 import sqlite3
 import os
 app = Flask(__name__)
@@ -67,7 +68,7 @@ def sign_Auth():
             c.execute(command)
             db.commit()
             db.close()
-            dictInput = story.getLastUpdate()
+            dictInput = getLastUpdate()
             return render_template("landing.html", d = dictInput)
 
         # All other invalid cases =============================
@@ -89,8 +90,8 @@ def authenticate():
 
     # Both username and password are valid ================
     if good(session['username'], session['password']):
-        dictInput = story.getLastUpdate()
-        return render_template("landing.html", d = dictInput) 
+        dictInput = story.getStory()
+        return render_template("landing.html", d = dictInput)
 
     # All other invalid cases =============================
     else:

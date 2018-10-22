@@ -3,13 +3,14 @@ from datetime import datetime
 
 DB_FILE = "database.db"
 
-# creates the story table
-def createTable():
-    db = sqlite3.connect(DB_FILE)
-    c = db.cursor()
-    c.execute("CREATE TABLE stories (story TEXT, contributer TEXT, timestamp TEXT, contribution TEXT)")
-    db.commit()
-    db.close()
+# # creates the story table
+# def createTable():
+#     db = sqlite3.connect(DB_FILE)
+#     c = db.cursor()
+#     c.execute("CREATE TABLE stories (story TEXT, contributer TEXT, timestamp TEXT, contribution TEXT)")
+#     db.commit()
+#     db.close()
+#
 
 # creates an entry in the story table
 def updateStory(title, user, text):
@@ -70,7 +71,7 @@ def getLastUpdate():
 
 
 # print(getTime())
-createTable()
+# createTable()
 updateStory('title', 'clara', 'once upon a time')
 updateStory('title', 'jiajie', 'there was a family')
 updateStory('title1', 'alex', 'The sky was blue,')

@@ -15,16 +15,16 @@
 	<th>Time Edited</th>
 	<th>Preview</th>
       </tr>
-      <!--
-      {% for story, contributer, timestamp, contribution in info %}
+     
+      {% for key in dictInput %}
       <tr>
-	<td>{{story}}</td>
-	<td>{{contributer}}</td>
-	<td>{{timestamp}}</td>
-	<td>{{contribution}}</td>
+	<td>{{key}}</td>
+	<td>{{dictInput[key][0]}}</td>
+	<td>{{dictInput[key][1]}}</td>
+	<td>{{dictInput[key][2]}}</td>
       </tr>
       {% endfor %}
--->    
+
     </table>
     
     <form action = "/logout">

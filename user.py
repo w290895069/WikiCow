@@ -2,27 +2,55 @@ import sqlite3
 
 DB_FILE = "database.db"
 
+# creates table called users
 def createTable():
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    c.execute("CREATE TABLE users (user TEXT, pass TEXT, question TEXT, answer TEXT)")
+    c.execute("CREATE TABLE users (user TEXT, password TEXT, question TEXT, answer TEXT)")
     db.commit()
     db.close()
 
-def register(usr, pass, q, a):
+# if username already exists, returns false. otherwise inserts a row in users, returns true.
+def register(usr, psw, q, a):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    params = (usr, pass, q, a)
+    data = c.execute("SELECT * FROM users;")
+    for row in data:
+        if usr == row[0]:
+            return False
+    params = (usr, psw, q, a)
     c.execute("INSERT INTO users VALUES (?, ?, ?, ?)", params)
     db.commit()
     db.close()
+    return True
 
-def authenticate(usr, pass):
+# returns true if username and password match, false otherwise
+def authenticate(usr, psw):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
-    line = c.execute("SELECT * FROM users WHERE user = " + usr)
-    if len(line) == 0 or line[1] != pass:
-        db.close()
-        return False
+    data = c.execute("SELECT * FROM users")
+    for row in data:
+        if row[0] == usr and row[1] == psw:
+            db.close()
+            return True
     db.close()
-    return True
+    return False
+
+# trivial
+def resetPassword(usr, psw):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    params = (psw, usr)
+    c.execute("UPDATE users SET password = ? WHERE user = ?", params)
+    db.commit()
+    db.close()
+
+createTable()
+register('290895069', 'qwer', '???', '???')
+register('235160223', 'asdf', '???', '???')
+register('290895069', 'qwdfawefweer', '???', '???')
+print(authenticate('290895069', 'qwer'))
+print(authenticate('235160223', 'asdf'))
+print(authenticate('290895069', 'asdf'))
+print(authenticate('sdfew', 'qwer'))
+resetPassword('235160223', 'lmao')

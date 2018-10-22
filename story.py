@@ -1,4 +1,4 @@
-import sqlite3, time
+import sqlite3
 from datetime import datetime
 
 DB_FILE = "database.db"

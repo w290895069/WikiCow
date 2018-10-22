@@ -1,6 +1,7 @@
 # Creates data base called database.db
 
 import sqlite3
+import user
 
 # name of file will be database.db
 DB_FILE = "database.db"
@@ -9,14 +10,16 @@ DB_FILE = "database.db"
 db = sqlite3.connect(DB_FILE)
 c = db.cursor()
 
-# create table for usernames and passwords
-command = "CREATE TABLE users (username TEXT, password TEXT)"
-c.execute(command)
+# # create table for usernames and passwords
+# command = "CREATE TABLE users (username TEXT, password TEXT)"
+# c.execute(command)
+#
+# # some hard coded values for now
+# params = [('clara', 'pass'), ('jiajie', 'pass1'), ('william', 'pass2'), ('alex', 'pass0')]
+# for i in params:
+#     c.execute('INSERT INTO users VALUES(?, ?)', i)
 
-# some hard coded values for now
-params = [('clara', 'pass'), ('jiajie', 'pass1'), ('william', 'pass2'), ('alex', 'pass0')]
-for i in params:
-    c.execute('INSERT INTO users VALUES(?, ?)', i)
+user.createTable()
 
 
 # create table for all of the stories and their entries

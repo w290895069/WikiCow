@@ -5,6 +5,7 @@
 
 from flask import Flask, render_template, request, session, url_for, redirect
 from story import getTime, getLastUpdate, getWriters, updateStory, getStory
+from user import register, resetPassword
 import sqlite3
 import os
 app = Flask(__name__)
@@ -41,35 +42,40 @@ def signup():
         loginMess = "Please enter a valid username and password to signup :)"
         return render_template("signup.html", message = loginMess)
 
-@app.route('/signupauth')
+@app.route('/signupauth', methods = ['POST'] )
 def sign_Auth():
+        print("PRINTING SESSIONS \n")
+        print(session)
 
         session['username'] = request.form['username']
         session['password'] = request.form['password']
+        session['question'] = request.form['question']
+        session['answer'] = request.form['answer']
+
         print(session)
         print(session['username'])
 
         # Invalid username: ===================================
         if len (session['username']) < 3:
-            msg = "*cue sad trombone music* It looks like you've entered an invalid username. Please try again."
+            msg = "It looks like you've entered an invalid username. Please try again."
             # print('bad username')
             return (render_template("signup.html", message = msg))
 
         # Invalid password: ===================================
         elif len (session['password']) < 5:
-            msg = "*cue sad trombone music* It looks like your password does not match your username. Please try again."
+            msg = "It looks like your password does not have enough characters. Please try again."
             # print('bad password')
             return (render_template("signup.html", message = msg))
 
         # Both username and password are valid ================
         elif (len (session['username']) > 3 and len (session['password']) > 5):
             # enter username and password into the database
-            command = 'INSERT INTO users VALUES(' + session['username'] + ' , ' + session['password'] + ')'
-            c.execute(command)
-            db.commit()
-            db.close()
-            dictInput = getLastUpdate()
-            return render_template("landing.html", d = dictInput)
+            # command = 'INSERT INTO users VALUES(' + session['username'] + ' , ' + session['password'] + ')'
+            # c.execute(command)
+            # db.commit()
+            # db.close()
+            register(session['username'], session['password'], session['question'], session['answer'])
+            return render_template("login.html")
 
         # All other invalid cases =============================
         else:
@@ -86,7 +92,7 @@ def authenticate():
 
     session['username'] = request.form['username']
     session['password'] = request.form['password']
-    # print(session)
+    print(session)
 
     # Both username and password are valid ================
     if good(session['username'], session['password']):

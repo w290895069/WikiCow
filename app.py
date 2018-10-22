@@ -67,7 +67,8 @@ def sign_Auth():
             c.execute(command)
             db.commit()
             db.close()
-            return render_template("login.html")
+            dictInput = story.getLastUpdate()
+            return render_template("landing.html", d = dictInput)
 
         # All other invalid cases =============================
         else:
@@ -88,9 +89,8 @@ def authenticate():
 
     # Both username and password are valid ================
     if good(session['username'], session['password']):
-        # info = [{'story' : [], 'contributer' : [], 'timestamp' : [], 'contribution' : []}]
-        # need away to fill the list to be used in the rendering
-        return render_template("landing.html")
+        dictInput = story.getLastUpdate()
+        return render_template("landing.html", d = dictInput) 
 
     # All other invalid cases =============================
     else:

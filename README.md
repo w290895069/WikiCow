@@ -76,3 +76,4 @@ Our templates directory within our repo stores templates for the website. These 
 3. Display stories that have been contributed to user.
 4. Have latest contribution displayed when the form for contributing to a story is displayed.
 5. Incorporate 'forgot password?' using security question/answer.
+6. Incorporate 'create story' button.

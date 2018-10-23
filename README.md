@@ -73,4 +73,4 @@ Our templates directory within our repo stores templates for the website. These 
 ## Things we still have to do: 
 1. Check if a user has already contributed to a story.
 2. Activate ability to contribute to a story.
- 
+3. Display stories that have been contributed to user.

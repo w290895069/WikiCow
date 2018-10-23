@@ -11,6 +11,7 @@
     <table border="1" style="width:100%">
       <tr>
 	<th>Story</th>
+	<th>Contributed?</th>
 	<th>Most Recent Contributer</th>
 	<th>Time Edited</th>
 	<th>Preview</th>
@@ -22,6 +23,13 @@
     <form action = "/add" method = "POST">
       <input type = "submit" name = "title" value = {{key}}>
     </form>
+  </td>
+  <td>
+    {% if c(u, key) %}
+    Yes
+    {% else %}
+    No
+    {% endif %}
   </td>
 	<td>{{d[key][0]}}</td>
 	<td>{{d[key][1]}}</td>

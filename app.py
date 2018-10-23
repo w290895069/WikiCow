@@ -37,13 +37,13 @@ def sign_Auth():
         if len(session['username']) < 3:
             msg = "It looks like you've entered an invalid username. Please try again."
             # print('bad username')
-            return (render_template("signup.html", message = msg))
+            return render_template("signup.html", message = msg)
 
         # Invalid password: ===================================
         elif len(session['password0']) < 5:
             msg = "It looks like your password does not have enough characters. Please try again."
             # print('bad password')
-            return (render_template("signup.html", message = msg))
+            return render_template("signup.html", message = msg)
 
         # Both username and password are valid ================
         elif len(session['username']) >= 3 and len(session['password0']) >= 5:
@@ -67,7 +67,7 @@ def sign_Auth():
         # All other invalid cases =============================
         else:
             msg = "Oops! Looks like something went wrong. Please try again."
-            return ((render_template("signup.html", message = msg )))
+            return render_template("signup.html", message = msg )
 
         print (url_for('disp_login'))
         print (url_for('authenticate'))
@@ -83,12 +83,12 @@ def authenticate():
 
     # Both username and password are valid ================
     if user.authenticate(session['username'], session['password']):
-        return render_template("landing.html", d = story.getLastUpdate())
+        return redirect("/menu")
 
     # All other invalid cases =============================
     else:
         msg = "It looks like you've entered an invalid password or username. Please try again."
-        return (render_template("login.html", message = msg))
+        return render_template("login.html", message = msg)
 
     print (url_for('disp_login'))
     print (url_for('authenticate'))
@@ -102,6 +102,26 @@ def add():
     session['title'] = request.form['title']
     msg = "Please add new content to " + session['title']
     return render_template('constructor.html', message = msg)
+
+@app.route('/create')
+def create():
+    msg = "Please create a new story"
+    return render_template('new_story.html', message = msg)
+
+@app.route('/complete', methods = ['POST'])
+def complete():
+    if 'title' not in session:
+        session['title'] = request.form['title']
+    session['content'] = request.form['content']
+    story.updateStory(session['title'], session['username'], session['content'])
+    msg = "Story Updated"
+    return render_template('complete.html', message = msg)
+
+@app.route('/menu')
+def menu():
+    def contributed(usr, title):
+        return story.contributed(usr, title)
+    return render_template("landing.html", d = story.getLastUpdate(), u = session['username'], c = contributed)
 
 @app.route('/logout')
 def logout():

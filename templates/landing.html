@@ -22,10 +22,19 @@
 	<td>{{d[key][0]}}</td>
 	<td>{{d[key][1]}}</td>
 	<td>{{d[key][2]}}</td>
+  <td>
+    <form action = "/add">
+      <input type = "submit" name = "add" value = {{key}}>
+    </form>
+  </td>
       </tr>
       {% endfor %}
 
     </table>
+
+    <form action = "/create">
+      <input type = "submit" name = "create story" value = "create">
+    </form>
 
     <form action = "/logout">
       <input type = "submit" name = "logout" value = "Logout">

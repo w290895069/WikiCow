@@ -47,11 +47,3 @@ def resetPassword(usr, psw):
 
 
 # createTable()
-# register('290895069', 'qwer', '???', '???')
-# register('235160223', 'asdf', '???', '???')
-# register('290895069', 'qwdfawefweer', '???', '???')
-# print(authenticate('290895069', 'qwer'))
-# print(authenticate('235160223', 'asdf'))
-# print(authenticate('290895069', 'asdf'))
-# print(authenticate('sdfew', 'qwer'))
-# resetPassword('235160223', 'lmao')

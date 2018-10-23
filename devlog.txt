@@ -1,4 +1,4 @@
-﻿~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 USAGE: (**WILL BE DELETING THIS SECTION SOON**)
 * Replace all fields, angle brackets included, with specified info.
   eg, pd <pd#> --> pd 3
@@ -137,7 +137,7 @@ wrote 3 fxns in user.py
 ==============================================================
 JiajieM -- 2018-10-22 12:59
 --------------------------------------------------------------
-fixed the landing.html
+fixed up the landing.html
 ==============================================================
 alexanderL -- 2018-10-22 13:06
 --------------------------------------------------------------
@@ -153,8 +153,8 @@ alexanderL -- 2018-10-22 18:19
 fixed app.py for registering, changed db_builder.py, and the signup
 template to have a security question and answer
 ==============================================================
-jiajieM -- 2018-10-22 19:34
+williamL -- 2018-10-22 20:10
 --------------------------------------------------------------
-fixed app.py's template rendering for landing.html
-fixed landing.html's for loop and table
+removed hard code in db_builder and added useful function calls
+removed duplicate in app.py
 ==============================================================

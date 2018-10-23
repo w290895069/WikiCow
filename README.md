@@ -66,6 +66,8 @@ Our templates directory within our repo stores templates for the website. These 
   - to connect the database to our app.
 - os: 
   - to create a random secret key for user sessions
+- datetime:
+  - to access the current time in format: yyyy-mm-dd hh:mm:ss
 
 
  

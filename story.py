@@ -69,6 +69,17 @@ def getLastUpdate():
     db.close()
     return dict
 
+# returns True if usr contributed to story, False otherwise
+def contributed(usr, title):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    data = c.execute("SELECT * FROM stories;")
+    for row in data:
+        if row[0] == title and row[1] == usr:
+            db.close()
+            return True
+    db.close()
+    return False
 
 # print(getTime())
 # createTable()

@@ -4,8 +4,9 @@
 # 2018-10-17
 
 from flask import Flask, render_template, request, session, url_for, redirect
-import user, story
-import sqlite3, os
+import user
+import story
+import os
 
 app = Flask(__name__)
 
@@ -132,7 +133,6 @@ def logout():
     print(request.args) ##gives immutabledict based on names of input fields (ie username & sub1)
     print(request.args['username'])
     print(request.headers)
-    return "Waaaa hooo HAAAH"
 
 
 if __name__ == "__main__":

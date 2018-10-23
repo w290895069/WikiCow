@@ -9,28 +9,6 @@ import sqlite3, os
 
 app = Flask(__name__)
 
-# username = 'alex'
-# password = 'starwars4'
-#
-# # name of file will be database.db
-# DB_FILE = "database.db"
-#
-# # create database.db
-# db = sqlite3.connect(DB_FILE)
-# c = db.cursor()
-#
-# # returns true if username and password match, false otherwise
-# def good(usr, psw):
-#     db = sqlite3.connect(DB_FILE)
-#     c = db.cursor()
-#     data = c.execute("SELECT * FROM users")
-#     for row in data:
-#         if row[0] == usr and row[1] == psw:
-#             db.close()
-#             return True
-#     db.close()
-#     return False
-
 @app.route('/')
 def disp_login():
     loginMess = "Please enter a valid username and password."

@@ -123,7 +123,7 @@ app.secret_key = os.urandom(32)
 def add():
     session['title'] = request.form['title']
     msg = "Please add new content to <i>" + session['title'] + "<\i>."
-    render_template('constructor.html', message = msg)
+    return render_template('constructor.html', message = msg)
 
 @app.route('/logout')
 def logout():

@@ -141,3 +141,7 @@ removed hard code in db_builder and added useful function calls
 removed duplicate in app.py
 initialized constructor.html
 ==============================================================
+williamL -- 2018-10-22 20:10
+--------------------------------------------------------------
+added updating and creating story features
+==============================================================

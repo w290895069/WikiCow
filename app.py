@@ -38,8 +38,8 @@ def disp_login():
 
 @app.route('/signup')
 def signup():
-        loginMess = "Please enter a valid username and password to signup :)"
-        return render_template("signup.html", message = loginMess)
+    loginMess = "Please enter a valid username and password to signup :)"
+    return render_template("signup.html", message = loginMess)
 
 @app.route('/signupauth', methods = ['POST'] )
 def sign_Auth():
@@ -47,7 +47,8 @@ def sign_Auth():
         print(session)
 
         session['username'] = request.form['username']
-        session['password'] = request.form['password']
+        session['password0'] = request.form['password0']
+        session['password1'] = request.form['password1']
         session['question'] = request.form['question']
         session['answer'] = request.form['answer']
 
@@ -55,13 +56,13 @@ def sign_Auth():
         print(session['username'])
 
         # Invalid username: ===================================
-        if len (session['username']) < 3:
+        if len(session['username']) < 3:
             msg = "It looks like you've entered an invalid username. Please try again."
             # print('bad username')
             return (render_template("signup.html", message = msg))
 
         # Invalid password: ===================================
-        elif len (session['password']) < 5:
+        elif len(session['password0']) < 5:
             msg = "It looks like your password does not have enough characters. Please try again."
             # print('bad password')
             return (render_template("signup.html", message = msg))
@@ -73,9 +74,14 @@ def sign_Auth():
             # c.execute(command)
             # db.commit()
             # db.close()
-            if user.register(session['username'], session['password'], session['question'], session['answer']):
+            if session['password0'] != session['password1']:
+                msg = "Signup failed. Passwords don't match"
+                return render_template("signup.html", message = msg)
+
+            elif user.register(session['username'], session['password0'], session['question'], session['answer']):
                 msg = "You have successfully signed up"
                 return render_template("login.html", message = msg)
+
             else:
                 msg = "Signup failed. Username already exists"
                 return render_template("signup.html", message = msg)
@@ -113,6 +119,11 @@ def authenticate():
 
 app.secret_key = os.urandom(32)
 
+@app.route('/add', methods = ['POST'])
+def add():
+    session['title'] = request.form['title']
+    msg = "Please add new content to <i>" + session['title'] + "<\i>."
+    render_template('constructor.html', message = msg)
 
 @app.route('/logout')
 def logout():

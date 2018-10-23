@@ -8,7 +8,7 @@
   <body>
     <p>  hellOOOOOooOOOOoOooOOOoooOoOOO </p>
 
-    <table style="width:100%">
+    <table border="1" style="width:100%">
       <tr>
 	<th>Story</th>
 	<th>Most Recent Contributer</th>
@@ -18,15 +18,14 @@
 
       {% for key in d %}
       <tr>
-	<td>{{key}}</td>
+  <td>
+    <form action = "/add" method="POST">
+      <input type = "submit" name = "title" value = {{key}}>
+    </form>
+  </td>
 	<td>{{d[key][0]}}</td>
 	<td>{{d[key][1]}}</td>
 	<td>{{d[key][2]}}</td>
-  <td>
-    <form action = "/add">
-      <input type = "submit" name = "add" value = {{key}}>
-    </form>
-  </td>
       </tr>
       {% endfor %}
 

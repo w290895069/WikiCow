@@ -46,7 +46,7 @@ def sign_Auth():
             return (render_template("signup.html", message = msg))
 
         # Both username and password are valid ================
-        elif len(session['username']) >= 3 and len(session['password']) >= 5:
+        elif len(session['username']) >= 3 and len(session['password0']) >= 5:
             # enter username and password into the database
             # command = 'INSERT INTO users VALUES(' + session['username'] + ' , ' + session['password'] + ')'
             # c.execute(command)

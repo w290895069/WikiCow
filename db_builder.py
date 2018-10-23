@@ -5,7 +5,8 @@ import user, story
 user.createTable()
 story.createTable()
 
-user.register('290895069', 'qwer', '???', '???')
+user.register('clara', 'pass', '???', '???')
+user.register('alex', 'pss0', '???', '???')
 user.register('235160223', 'asdf', '???', '???')
 user.register('290895069', 'qwdfawefweer', '???', '???')
 

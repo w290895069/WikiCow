@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Password Reset! </title>
+
+    <h1> PASSWORD RESET PAGE </h1>
+
+  </head>
+
+  <body>
+    <br> <br>
+    {{ message }}
+    <br> <br>
+    <form action = "/resetauth" method = "POST">
+
+      <b> Username: </b> <input type = "text" name = "username" > <br>
+      {{ question }} <br>
+      <b> Answer: </b> <input type = "text" name = "answer" > <br>
+      <input type = "submit" name = "sub1" value = "submit">
+    </form>
+
+    <br> <br>
+
+    <p>
+      Back to Login Page
+      <a href="/login">Login!</a>
+    </p>
+
+
+
+  </body>
+</html>

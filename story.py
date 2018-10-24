@@ -21,16 +21,20 @@ def updateStory(title, user, text):
     db.commit()
     db.close()
 
-# given the title, return a complete story by concatenating all entries
-def getStory(title):
+# given the title, return a complete story by concatenating all entries if true and a preview if not
+def getStory(title,fullStory):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
     data = c.execute("SELECT * FROM stories WHERE story = '" + title + "';")
     text = ''
     for row in data:
-        text += row[3] + ' '
+        if (fullStory):
+            text += row[3] + ' '
+        else:
+            text = row[3] + ' '
     db.close()
     return text
+
 
 # given the title, returns a list of all writers
 def getWriters(title):

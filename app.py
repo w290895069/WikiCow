@@ -110,7 +110,9 @@ app.secret_key = os.urandom(32)
 def add():
     session['title'] = request.form['title']
     msg = "Please add new content to " + session['title']
-    return render_template('constructor.html', message = msg)
+    def getStory(title):
+        return story.getStory(title,False)
+    return render_template('constructor.html', message = msg, p = getStory)
 
 @app.route('/create')
 def create():
@@ -137,7 +139,7 @@ def menu():
     def contributed(usr, title):
         return story.contributed(usr, title)
     def getStory(title):
-        return story.getStory(title)
+        return story.getStory(title,True)
     return render_template("landing.html", d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
 
 @app.route('/reset')

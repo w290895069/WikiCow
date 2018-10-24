@@ -1,4 +1,4 @@
-WikiCow
+﻿WikiCow
 Clara Mohri
 Jiajie Mai
 William Lu
@@ -157,4 +157,10 @@ alexanderL -- 2018-10-24 13:35
 --------------------------------------------------------------
 made a new resetpass.html and added two routes to app.py <- for 
 question and answer to reset password
+==============================================================
+jiajieM -- 2018-10-24
+--------------------------------------------------------------
+made it so that after contributing, it is impossible to add again
+made two tables for contributed and non contributed
+worked on preview for the addition page
 ==============================================================

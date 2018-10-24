@@ -15,6 +15,8 @@ def disp_login():
     loginMess = "Please enter a valid username and password."
     return render_template("login.html", message = loginMess)
 
+# the signup
+
 @app.route('/signup')
 def signup():
     loginMess = "Please enter a valid username and password to signup :)"
@@ -74,7 +76,7 @@ def sign_Auth():
         print (url_for('authenticate'))
         return redirect(url_for("disp_login"))
 
-# what is the difference between render_template, redirect, and url_for?
+# to check if your username and password is okay
 @app.route('/auth', methods = ['POST'] )
 def authenticate():
 
@@ -95,8 +97,19 @@ def authenticate():
     print (url_for('authenticate'))
     return redirect(url_for("disp_login"))
 
+# to reset password
+@app.route('/reset', methods = ['POST'])
+def reset():
+    pass 
+
+
+
+
 
 app.secret_key = os.urandom(32)
+
+
+# to add and create stories after login
 
 @app.route('/add', methods = ['POST'])
 def add():

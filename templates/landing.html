@@ -42,18 +42,14 @@
       </tr>
 
       {% for key in d %}
+      {% if c(u, key) %}
       <tr>
-	<td>
-	  {% if not c(u, key) %}
-	  <form action = "/add" method = "POST">
-	    <input type = "submit" name = "title" value = {{key}}>
-	  </form>	
-	  {% endif %}
-	</td>
+	<td>{{key}}</td>
 	<td>{{d[key][0]}}</td>
 	<td>{{d[key][1]}}</td>
-	<td>{{d[key][2]}}</td>
+	<td>{{s}}</td>
       </tr>
+      {% endif %}
       {% endfor %} 
 
     <form action = "/create">

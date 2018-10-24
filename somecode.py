@@ -1,3 +1,5 @@
+#this is code we wrote before discovering library datetime
+
 import time, math
 
 def getTimesdfasfaef():

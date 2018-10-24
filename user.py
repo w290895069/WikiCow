@@ -45,5 +45,24 @@ def resetPassword(usr, psw):
     db.commit()
     db.close()
 
+def getQuestion(usr):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    data = c.execute("SELECT * FROM users")
+    for row in data:
+        if row[0] == usr:
+            db.close()
+            return row[2]
+    db.close()
+    return -1
+
+def checkAnswer(usr, ans):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+    data = c.execute("SELECT * FROM users")
+    for row in data:
+        if row[0] == usr:
+            db.close()
+            return row[3] == ans
 
 # createTable()

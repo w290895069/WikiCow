@@ -97,11 +97,6 @@ def authenticate():
     print (url_for('authenticate'))
     return redirect(url_for("disp_login"))
 
-# to reset password
-@app.route('/reset', methods = ['POST'])
-def reset():
-    pass 
-
 
 
 
@@ -122,20 +117,60 @@ def create():
     msg = "Please create a new story"
     return render_template('new_story.html', message = msg)
 
-@app.route('/complete', methods = ['POST'])
-def complete():
-    if 'title' not in session:
-        session['title'] = request.form['title']
+@app.route('/complete_add', methods = ['POST'])
+def completeAdd():
     session['content'] = request.form['content']
     story.updateStory(session['title'], session['username'], session['content'])
     msg = "Story Updated"
+    return render_template('complete.html', message = msg)
+
+@app.route('/complete_create', methods = ['POST'])
+def completeCreate():
+    session['title'] = request.form['title']
+    session['content'] = request.form['content']
+    story.updateStory(session['title'], session['username'], session['content'])
+    msg = "Story Created"
     return render_template('complete.html', message = msg)
 
 @app.route('/menu')
 def menu():
     def contributed(usr, title):
         return story.contributed(usr, title)
-    return render_template("landing.html", d = story.getLastUpdate(), u = session['username'], c = contributed)
+    def getStory(title):
+        return story.getStory(title)
+    return render_template("landing.html", d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
+
+@app.route('/reset')
+def reset():
+    return render_template("reset.html")
+
+@app.route('/reset_auth', methods = ["POST"])
+def resetAuth():
+    session['username'] = request.form['username']
+    session['question'] = user.getQuestion(session['username'])
+    if session['question'] == -1:
+        msg = "Username does not exist."
+        return render_template("reset.html", message = msg)
+    return render_template("reset_auth.html", q = session['question'])
+
+@app.route('/reset_pass', methods = ["POST"])
+def resetPass():
+    session['answer'] = request.form['answer']
+    if user.checkAnswer(session['username'], session['answer']):
+        return render_template("reset_pass.html")
+    msg = "Wrong Answer"
+    return render_template("reset_auth.html", message = msg, q = session['question'])
+
+@app.route('/reset_complete', methods = ["POST"])
+def resetComplete():
+    session['password0'] = request.form['password0']
+    session['password1'] = request.form['password1']
+    if session['password0'] == session['password1']:
+        user.resetPassword(session['username'], session['password0'])
+        msg = "Password Reset Comlete"
+        return render_template("reset_complete.html", message = msg)
+    msg = "Passwords do not match"
+    return render_template("reset_pass.html", message = msg)
 
 @app.route('/logout')
 def logout():

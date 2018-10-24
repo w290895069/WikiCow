@@ -1,0 +1,12 @@
+{% extends "reset.html" %}
+
+{% block form %}
+<form action = "/reset_complete" method = "POST">
+
+
+  <b> Enter Password: </b> <input type = "password" name = "password0" > <br>
+  <b> Confirm Password: </b> <input type = "password" name = "password1" > <br>
+
+  <input type = "submit" name = "sub1" value = "submit">
+</form>
+{% endblock %}

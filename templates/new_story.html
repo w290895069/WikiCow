@@ -1,4 +1,7 @@
 {% extends "constructor.html" %}
+  {% block action %}
+   <form action = "/complete_create" method = "POST">
+  {% endblock %}
   {% block title %}
     <b> Title: </b><br> <input type = "text" name = "title" > <br>
   {% endblock %}

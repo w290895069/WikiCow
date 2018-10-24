@@ -6,63 +6,68 @@
   </head>
 
   <body>
-    <h>  Welcome </h>
+    <h1>  Welcome </h1><br>
 
+    <h3>Stories you have not contributed to:</h3>
     <table border="1" style="width:100%">
       <tr>
-	<th>Story</th>
-	<th>Most Recent Contributor</th>
-	<th>Time Edited</th>
-	<th>Preview</th>
+	       <th>Story</th>
+	       <th>Most Recent Contributor</th>
+  	     <th>Time Edited</th>
+	       <th>Preview</th>
       </tr>
 
       {% for key in d %}
-      <tr>
-	<td>
-	  {% if not c(u, key) %}
-	  <form action = "/add" method = "POST">
-	    <input type = "submit" name = "title" value = {{key}}>
-	  </form>	
-	  {% endif %}
-	</td>
-	<td>{{d[key][0]}}</td>
-	<td>{{d[key][1]}}</td>
-	<td>{{d[key][2]}}</td>
+	     {% if not c(u, key) %}
+       <tr>
+         <td>
+	          <form action = "/add" method = "POST">
+	             <input type = "submit" name = "title" value = {{key}}>
+	          </form>
+	       </td>
+	        <td>{{d[key][0]}}</td>
+	        <td>{{d[key][1]}}</td>
+	        <td>{{d[key][2]}}</td>
       </tr>
-      {% endfor %}
+      {% endif %}
+    {% endfor %}
 
     </table>
 
-       <table border="1" style="width:100%">
+    <br>
+
+    <h3>Stories you have contributed to:</h3>
+    <table border="1" style="width:100%">
       <tr>
-	<th>Story</th>
-	<th>Most Recent Contributor</th>
-	<th>Time Edited</th>
-	<th>Full Story</th>
+	       <th>Story</th>
+	       <th>Most Recent Contributor</th>
+	       <th>Time Edited</th>
+	       <th>Full Story</th>
       </tr>
 
       {% for key in d %}
       {% if c(u, key) %}
       <tr>
-	<td>{{key}}</td>
-	<td>{{d[key][0]}}</td>
-	<td>{{d[key][1]}}</td>
-	<td>{{s}}</td>
+        <td>{{key}}</td>
+	      <td>{{d[key][0]}}</td>
+	      <td>{{d[key][1]}}</td>
+	      <td>{{s(key)}}</td>
       </tr>
       {% endif %}
-      {% endfor %} 
+      {% endfor %}
+    </table>
+
+    <br>
 
     <form action = "/create">
-      <input type = "submit" name = "create story" value = "create">
+      <input type = "submit" name = "create" value = "Create Story">
     </form>
+
+    <br>
 
     <form action = "/logout">
       <input type = "submit" name = "logout" value = "Logout">
     </form>
-
-
-
-
 
   </body>
 </html>

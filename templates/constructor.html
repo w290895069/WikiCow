@@ -11,7 +11,7 @@
     <br> <br>
     {{ message }}
     <br> <br>
-    <form action = "/complete" method = "POST">
+    {% block action %}<form action = "/complete_add" method = "POST">{% endblock %}
       {% block title %} {% endblock %}
       <b> Content: </b><br> <input type = "text" name = "content"> <br>
       <input type = "submit" name = "name" value = "submit">

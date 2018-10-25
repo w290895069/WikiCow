@@ -112,7 +112,7 @@ def add():
     msg = "Please add new content to " + session['title']
     def getStory(title):
         return story.getStory(title,False)
-    return render_template('constructor.html', message = msg, p = getStory)
+    return render_template('constructor.html', message = msg, p = getStory(session['title']))
 
 @app.route('/create')
 def create():

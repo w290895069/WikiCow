@@ -155,7 +155,7 @@ Made fixes to database.db
 ==============================================================
 alexanderL -- 2018-10-24 13:35
 --------------------------------------------------------------
-made a new resetpass.html and added two routes to app.py <- for 
+made a new resetpass.html and added two routes to app.py <- for
 question and answer to reset password
 ==============================================================
 jiajieM -- 2018-10-24 22:45
@@ -167,4 +167,8 @@ worked on preview for the addition page
 jiajieM -- 2018-10-25 13:06
 --------------------------------------------------------------
 finished preview for the addition page
+==============================================================
+alexanderL -- 2018-10-24 13:35
+--------------------------------------------------------------
+edited app.py and landing.html to create word limit for users
 ==============================================================

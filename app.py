@@ -123,9 +123,19 @@ def create():
 @app.route('/complete_add', methods = ['POST'])
 def completeAdd():
     session['content'] = request.form['content']
-    story.updateStory(session['title'], session['username'], session['content'])
-    msg = "Story Updated"
-    return render_template('complete.html', message = msg)
+    print ( len (session['content']))
+    if ( (len (session['content'])) < 60 ):
+        story.updateStory(session['title'], session['username'], session['content'])
+        msg = "Story Updated"
+        return render_template('complete.html', message = msg)
+    else:
+        def contributed(usr, title):
+            return story.contributed(usr, title)
+
+        def getStory(title):
+            return story.getStory(title, True)
+        msg = "You can only add up to 60 characters to a story"
+        return render_template("landing.html", message = msg, d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
 
 @app.route('/complete_create', methods = ['POST'])
 def completeCreate():
@@ -142,7 +152,8 @@ def menu():
 
     def getStory(title):
         return story.getStory(title, True)
-    return render_template("landing.html", d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
+    msg = "Make your journey"
+    return render_template("landing.html", messagge = msg, d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
 
 @app.route('/reset')
 def reset():

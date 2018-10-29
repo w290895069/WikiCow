@@ -7,7 +7,7 @@ WikiCow has created a collaborative story telling website. On the website, users
 ## User Instructions to Access the Website: 
 Pre-requisites:
 - Have python installed
-- Have a virtual environment that runs flask
+- Have a virtual environment
 
 1. Clone our repo: 
 ``` 

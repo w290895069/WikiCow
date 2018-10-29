@@ -13,24 +13,28 @@ $ git clone git@github.com:WilliamLu0211/WikiCow.git
 ```
 $ cd WikiCow
 ```
-3. Run the file db_builder.py:
+3. Remove the database you pulled:
+```
+$ rm database.db
+```
+4. Run the file db_builder.py:
 ```
 $ python db_builder.py
 ```
-4. Activate your virtual environment: 
-If your virtual environment exists in your home directory, then: 
+5. Activate your virtual environment: 
 ```
-$ . ~/<venv>/bin/activate
+$ . path/to/venv/bin/activate
 ```
-5. Run app.py: 
+6. Run app.py: 
 ```
 $ python app.py
 ```
-6. Your console will tell you where the app is running. Open this IP address to access the website.
+7. Your console will tell you where the app is running. Open this IP address to access the website.
 
 ## Website Usage: 
 - If you do not have an account, then create one by clicking the "Sign Up" button. 
-You'll be asked to create a username and password. There is also a security question/answer to fill out, for security reasons.
+You'll be asked to create a username and password. There is also a security question/answer to fill out, so you can recover your account if you forget your password.
+  - If you forgot your password, you can type in your username and answer your security question to reset your password.
 - Once you have an account, then you can log in.
 - Behold the a **landing page**:
   Here you'll see... 

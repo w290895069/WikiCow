@@ -3,6 +3,7 @@
 # P #00: Da Art of Storytellin'
 # 2018-10-17
 
+#import libraries:
 from flask import Flask, render_template, request, session, url_for, redirect
 import user
 import story
@@ -10,22 +11,23 @@ import os
 
 app = Flask(__name__)
 
+#login
 @app.route('/')
 def disp_login():
     loginMess = "Please enter a valid username and password."
     return render_template("login.html", message = loginMess)
 
 # the signup
-
 @app.route('/signup')
 def signup():
     loginMess = "Please enter a valid username and password to signup :)"
     return render_template("signup.html", message = loginMess)
 
+#authentication for sign up:
 @app.route('/signupauth', methods = ['POST'] )
 def sign_Auth():
-        print("PRINTING SESSIONS \n")
-        print(session)
+        #print("PRINTING SESSIONS \n")
+        #print(session)
 
         session['username'] = request.form['username']
         session['password0'] = request.form['password0']
@@ -33,8 +35,8 @@ def sign_Auth():
         session['question'] = request.form['question']
         session['answer'] = request.form['answer']
 
-        print(session)
-        print(session['username'])
+        #print(session)
+        #print(session['username'])
 
         # Invalid username: ===================================
         if len(session['username']) < 3:
@@ -97,10 +99,7 @@ def authenticate():
     print (url_for('authenticate'))
     return redirect(url_for("disp_login"))
 
-
-
-
-
+#create secret key for user
 app.secret_key = os.urandom(32)
 
 
@@ -155,10 +154,12 @@ def menu():
     msg = "Make your journey"
     return render_template("landing.html", messagge = msg, d = story.getLastUpdate(), u = session['username'], c = contributed, s = getStory)
 
+#reset password
 @app.route('/reset')
 def reset():
     return render_template("reset.html")
 
+#authenticate reset
 @app.route('/reset_auth', methods = ["POST"])
 def resetAuth():
     session['username'] = request.form['username']
@@ -168,6 +169,7 @@ def resetAuth():
         return render_template("reset.html", message = msg)
     return render_template("reset_auth.html", q = session['question'])
 
+#reset password
 @app.route('/reset_pass', methods = ["POST"])
 def resetPass():
     session['answer'] = request.form['answer']
@@ -176,6 +178,7 @@ def resetPass():
     msg = "Wrong Answer"
     return render_template("reset_auth.html", message = msg, q = session['question'])
 
+#complete reset
 @app.route('/reset_complete', methods = ["POST"])
 def resetComplete():
     session['password0'] = request.form['password0']
@@ -187,6 +190,7 @@ def resetComplete():
     msg = "Passwords do not match"
     return render_template("reset_pass.html", message = msg)
 
+#logout
 @app.route('/logout')
 def logout():
     return ( render_template ( "login.html", message = "You have been successfully logged out."))

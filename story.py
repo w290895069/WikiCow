@@ -1,5 +1,6 @@
+#code to create story table in database.db
 import sqlite3
-from datetime import datetime
+from datetime import datetime #for timestamps
 
 DB_FILE = "database.db"
 

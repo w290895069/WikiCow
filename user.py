@@ -1,3 +1,5 @@
+#code to create user table in database.db
+
 import sqlite3
 
 DB_FILE = "database.db"
